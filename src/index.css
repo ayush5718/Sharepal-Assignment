@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff; /* Tailwind CSS dark background color */
+  /* border: 1px solid rgba(156, 163, 175, 0.5);  */
+}
+
+::-webkit-scrollbar-thumb {
+  /* width: 5px; */
+  background-color: rgba(
+    0
+  ); /* Tailwind CSS gray thumb color with transparency */
+  border-radius: 8px;
+  border: 0.5px solid #000; /* Tailwind CSS dark border color */
+  margin: 4px; /* Adjust the margin to add spacing between track and thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(
+    156,
+    163,
+    175,
+    1
+  ); /* Tailwind CSS darker gray color on hover with full transparency */
+}
+
+/* Text Selection Styles */
+*::selection {
+  background-color: #805ad5; /* Tailwind CSS purple color */
+  color: #fff;
+}
