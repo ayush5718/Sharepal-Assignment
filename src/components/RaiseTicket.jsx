@@ -1,25 +1,33 @@
 import React, { useState } from "react";
 
-const RaiseTicket = ({ onClose }) => {
+const RaiseTicket = ({ orderId, onClose }) => {
   return (
     <div>
       <>
         {/* Main modal */}
         <div className="fixed inset-0 flex items-center justify-center z-50 backdrop-filter backdrop-blur-lg">
-          <div className="flex items-center justify-center min-h-full p-4 text-center">
+          <div
+            className="flex items-center justify-center min-h-full p-4 text-center"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
+          >
             <div className="relative w-full max-w-lg p-4 md:p-8 bg-white rounded-3xl shadow-lg">
               {/* Close button and modal header */}
               <div className="flex items-start justify-between">
-                <h3 className="text-lg font-semibold">Create New Product</h3>
+                <h3 className="text-lg font-semibold">
+                  Reoport About the Issue
+                </h3>
                 <button
                   type="button"
-                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-lg p-1.5 ml-auto inline-flex items-center"
                   data-modal-toggle="crud-modal"
                   onClick={onClose}
                 >
                   <span className="sr-only">Close</span>
                   <svg
-                    className="w-6 h-6"
+                    className="w-10 h-8"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -42,10 +50,11 @@ const RaiseTicket = ({ onClose }) => {
                       htmlFor="name"
                       className="block mb-2 text-sm font-medium text-gray-900 text-left"
                     >
-                      Name
+                      Order ID
                     </label>
                     <input
                       type="text"
+                      value={orderId.orderId}
                       name="name"
                       id="name"
                       className="bg-white border-1 border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 text-gray-800 dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -61,7 +70,7 @@ const RaiseTicket = ({ onClose }) => {
                       Price
                     </label>
                     <input
-                      type="number"
+                      value={orderId.rent}
                       name="price"
                       id="price"
                       className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -81,10 +90,9 @@ const RaiseTicket = ({ onClose }) => {
                       className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 text-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     >
                       <option selected="">Select category</option>
-                      <option value="TV">TV/Monitors</option>
-                      <option value="PC">PC</option>
-                      <option value="GA">Gaming/Console</option>
-                      <option value="PH">Phones</option>
+                      <option value="Return">Return</option>
+                      <option value="Payement">Payment</option>
+                      <option value="Refund">Refund</option>
                     </select>
                   </div>
                   <div className="col-span-2">
@@ -92,7 +100,7 @@ const RaiseTicket = ({ onClose }) => {
                       htmlFor="description"
                       className="block mb-2 text-sm font-medium text-gray-900  text-left"
                     >
-                      Product Description
+                      Describe Your Issue
                     </label>
                     <textarea
                       id="description"

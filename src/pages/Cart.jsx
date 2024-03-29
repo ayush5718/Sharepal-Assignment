@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ordersData from "../data/OrdersData";
 import { useEffect } from "react";
-import OrderStage from "./OrdersStage";
+import OrderStage from "../components/OrdersStage";
 import Stepper from "@keyvaluesystems/react-stepper";
+import "../index.css";
 
 export const Cart = () => {
   const navigate = useNavigate();
@@ -57,7 +58,7 @@ export const Cart = () => {
                   <button
                     onClick={handleBackButton}
                     type="button"
-                    className="rounded-md bg-black px-8 py-2 text-lg font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black flex justify-center items-center gap-2 text-center"
+                    className="rounded-md sticky bg-black px-8 py-2 text-lg font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black flex justify-center items-center gap-2 text-center"
                   >
                     <div>
                       <svg
@@ -126,6 +127,9 @@ export const Cart = () => {
                     onClick={handleOpenStage}
                     className="border-2 shadow-md"
                   >
+                    <p className="text-center text-lg mt-2 subpixel-antialiased font-bold">
+                      Track Order
+                    </p>
                     <Stepper
                       steps={[
                         {

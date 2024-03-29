@@ -1,16 +1,16 @@
 // src/App.js
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import MyOrdersPage from "./pages/MyOrdersPage";
+import UserOrders from "./pages/UserOrders";
 import { MyOrders } from "./components/MyOrders";
-import { Cart } from "./components/Cart";
+import { Cart } from "./pages/Cart";
 import OrderStage from "./components/OrdersStage";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<MyOrdersPage />} />
+        <Route path="/" element={<UserOrders />} />
         <Route path="/:orderID" element={<MyOrders />} />
         <Route path="/cart/:orderId?" element={<Cart />} />
         <Route path="/orderstage" element={<OrderStage />} />

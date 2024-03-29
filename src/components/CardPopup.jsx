@@ -3,14 +3,19 @@ import React from "react";
 const CardPopup = ({ order, onClose }) => {
   return (
     <div>
-      <section className=" sm:py-16 lg:py-20">
+      <section className=" sm:py-16 lg:py-20 ">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center">
             <h1 className="text-2xl font-semibold text-gray-900">
               Order Details
             </h1>
           </div>
-          <div className="mx-auto mt-8 max-w-md md:mt-12">
+          <div
+            className="mx-auto mt-8 max-w-md md:mt-12 relative"
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
             <div className="rounded-3xl bg-white shadow-lg">
               <div className="px-4 py-6 sm:px-8 sm:py-10 md:max-h-[600px] overflow-scroll max-h-[500px]">
                 <div className="flow-root">
@@ -25,7 +30,7 @@ const CardPopup = ({ order, onClose }) => {
                       {/* Close button icon */}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
+                        className="h-10 w-8"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"

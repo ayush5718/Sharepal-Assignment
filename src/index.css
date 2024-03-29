@@ -32,6 +32,41 @@
 
 /* Text Selection Styles */
 *::selection {
-  background-color: #805ad5; /* Tailwind CSS purple color */
+  background-color: #805ad5;
+  /* background-color: #b63750; Tailwind CSS purple color */
   color: #fff;
+}
+
+@bg: #2d2d37;
+@primary: #fd6b21;
+
+.bounce-anchor {
+  color: white;
+  text-decoration: none;
+}
+
+.arrow {
+  text-align: center;
+  margin: 8% 0;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
