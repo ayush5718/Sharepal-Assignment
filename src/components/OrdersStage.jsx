@@ -32,27 +32,20 @@ const OrderStage = ({ orderStage, onClose }) => {
   }));
 
   return (
-    <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="mx-auto max-w-md md:mt-12 rounded-3xl bg-white shadow-lg">
+    <div
+      onClick={onClose}
+      className="fixed  inset-0 bg-gray-600 bg-opacity-50 h-full w-full"
+    >
+      <div className="flex items-center justify-center min-h-screen p-4  ">
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+          className="mx-auto max-w-md rounded-3xl bg-white shadow-lg overflow-hidden"
+        >
           {/* Close Button */}
 
-          <div className="px-4 py-6 sm:px-8 sm:py-10 relative max-h-[500px] overflow-scroll w-[350px]">
-            <button
-              onClick={onClose}
-              className="sticky top-0 right-4 text-gray-600 hover:text-gray-800 focus:outline-none"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            {/* Stepper */}
+          <div className="px-4 md:px-8 relative    max-h-[500px] overflow-y-auto w-[450px] max-w-full ">
             <Stepper
               steps={steps}
               currentStepIndex={OrderStageSteps.indexOf(orderStage)}

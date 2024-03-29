@@ -1,6 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @import url('https://fonts.cdnfonts.com/css/circular-std'); */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+  scroll-behavior: smooth;
+  /* border:1px solid red; */
+}
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
   width: 8px;
@@ -13,11 +26,8 @@
 
 ::-webkit-scrollbar-thumb {
   /* width: 5px; */
-  background-color: rgba(
-    0
-  ); /* Tailwind CSS gray thumb color with transparency */
+  background-color: rgb(208, 205, 205);
   border-radius: 8px;
-  border: 0.5px solid #000; /* Tailwind CSS dark border color */
   margin: 4px; /* Adjust the margin to add spacing between track and thumb */
 }
 
