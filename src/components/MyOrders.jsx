@@ -66,20 +66,22 @@ export function MyOrders() {
             </div>
             <div className="flex justify-between flex-col md:flex-row px-4">
               <div className="left-section">
-                {/* <h2 className="text-lg font-semibold mb-2">
-                  Order #{index + 1}
-                </h2> */}
-
                 <p className="text-xl">{order.orderId}</p>
+                <p>
+                  <span className="font-semibold">Order Date:</span>{" "}
+                  {order.orderDate}
+                </p>
                 <p>
                   <span className="font-semibold">Order Status:</span>{" "}
                   {order.orderStage}
                 </p>
                 <p>
-                  <span>Rental Start Date: </span> {order.rentalStartDate}
+                  <span className="font-semibold">Rental Start Date: </span>{" "}
+                  {order.rentalStartDate}
                 </p>
                 <p>
-                  <span>Rental End Date: </span> {order.rentalEndDate}
+                  <span className="font-semibold">Rental End Date: </span>{" "}
+                  {order.rentalEndDate}
                 </p>
               </div>
 
@@ -96,28 +98,12 @@ export function MyOrders() {
               </p> */}
 
               <div className="flex justify-between md:flex-row flex-col">
-                <div className="left-section gap-4">
-                  <p>
-                    <span className="font-semibold">Order Date:</span>{" "}
-                    {order.orderDate}
-                  </p>
-                </div>
-                <div className="mid-section">
-                  {" "}
-                  <p>
-                    <span className="font-semibold">Delivery Date:</span>{" "}
-                    {order.deliveryDate}
-                  </p>
-                </div>
-                <div className="right-section">
-                  <p>
-                    <span className="font-semibold">Rental Start Date:</span>{" "}
-                    {order.rentalStartDate}
-                  </p>
-                </div>
+                <div className="left-section gap-4"></div>
+                <div className="mid-section"></div>
+                <div className="right-section"></div>
               </div>
 
-              <div className="flex justify-between mt-4 ">
+              <div className="flex justify-between  ">
                 <div>
                   <button
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-900 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-800 dark:hover:bg-blue-800 dark:focus:ring-blue-800 "
