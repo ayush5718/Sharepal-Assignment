@@ -42,7 +42,7 @@ export const Cart = () => {
   };
 
   return (
-    <div className="mx-auto my-4 max-w-6xl px-2 md:my-6 md:px-0 overflow-hidden">
+    <div className="mx-auto my-4 max-w-7xl max-h-screen  px-2 md:my-6 md:px-0 ">
       <h2 className="text-4xl font-bold text-center text-blue-800">
         Order Details
       </h2>
@@ -89,6 +89,12 @@ export const Cart = () => {
                       Order Date:
                     </span>{" "}
                     {order.rentalStartDate}
+                  </span>
+                  <span className="text-sm font-medium md:text-lg text-blue-700">
+                    <p className=" font-bold text-gray-800  ">
+                      Delivery Address :
+                    </p>{" "}
+                    {order.deliveryAddress}
                   </span>
                   <span className="text-sm font-semibold md:text-lg text-blue-700">
                     <span className="text-gray-800 font-bold">
@@ -178,13 +184,13 @@ export const Cart = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 md:max-h-[700px] md:overflow-scroll">
           <div className="md:p-8 px-2 ">
-            <ul className="-my-7 divide-y divide-gray-800">
+            <ul className="-my-7 divide-y divide-gray-800 ">
               {orderProducts.map((product) => (
                 <li
                   key={product.id}
-                  className="flex justify-between space-x-5 py-7 md:flex-row flex-col "
+                  className="flex justify-between space-x-5 py-7 md:flex-row flex-col  "
                 >
                   <div className="flex flex-1 items-stretch md:flex-row flex-col">
                     <div className="flex-shrink-0">

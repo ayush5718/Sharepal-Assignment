@@ -38,6 +38,33 @@ const ordersData = [
         productImg:
           "https://ik.imagekit.io/faskf16pg/Trekking_Gear/trek-100-trekking-shoes-on-rent-1_y1TnrtDSJ.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1627650088052",
       },
+      {
+        id: 99,
+        productName: "Unisex Waterproof shoes",
+        size: "EU38 - UK5",
+        quantity: 1,
+        rent: 1539,
+        productImg:
+          "https://ik.imagekit.io/faskf16pg/Trekking_Gear/trek-100-trekking-shoes-on-rent-1_y1TnrtDSJ.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1627650088052",
+      },
+      {
+        id: 107,
+        productName: "Unisex Waterproof shoes",
+        size: "EU38 - UK5",
+        quantity: 1,
+        rent: 1539,
+        productImg:
+          "https://ik.imagekit.io/faskf16pg/Trekking_Gear/trek-100-trekking-shoes-on-rent-1_y1TnrtDSJ.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1627650088052",
+      },
+      {
+        id: 107,
+        productName: "Unisex Waterproof shoes",
+        size: "EU38 - UK5",
+        quantity: 1,
+        rent: 1539,
+        productImg:
+          "https://ik.imagekit.io/faskf16pg/Trekking_Gear/trek-100-trekking-shoes-on-rent-1_y1TnrtDSJ.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1627650088052",
+      },
     ],
   },
   {
@@ -72,33 +99,6 @@ const ordersData = [
       },
       {
         id: 10,
-        productName: "Nikon Z30 with Creator Kit",
-        size: "One Size",
-        quantity: 1,
-        rent: 2349,
-        productImg:
-          "https://ik.imagekit.io/faskf16pg/dslr-cameras/NikonZ30-creator-kit-on-rent-SharePal-1__7__Qvw4QnaNk.png?updatedAt=1681825550963",
-      },
-      {
-        id: 100,
-        productName: "Nikon Z30 with Creator Kit",
-        size: "One Size",
-        quantity: 1,
-        rent: 2349,
-        productImg:
-          "https://ik.imagekit.io/faskf16pg/dslr-cameras/NikonZ30-creator-kit-on-rent-SharePal-1__7__Qvw4QnaNk.png?updatedAt=1681825550963",
-      },
-      {
-        id: 101,
-        productName: "Nikon Z30 with Creator Kit",
-        size: "One Size",
-        quantity: 1,
-        rent: 2349,
-        productImg:
-          "https://ik.imagekit.io/faskf16pg/dslr-cameras/NikonZ30-creator-kit-on-rent-SharePal-1__7__Qvw4QnaNk.png?updatedAt=1681825550963",
-      },
-      {
-        id: 102,
         productName: "Nikon Z30 with Creator Kit",
         size: "One Size",
         quantity: 1,
