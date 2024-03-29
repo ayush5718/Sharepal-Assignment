@@ -19,10 +19,7 @@ const OrderCard = ({
     >
       <div className="text-left mb-4 flex justify-between absolute right-0 top-0 z-10">
         <div className="left-header">
-          <button
-            className={"rounded-b-lg bg-blue-600 px-3 py-2 text-white"}
-            onClick={() => handleOpenPopup(order?.orderId)}
-          >
+          <button className={"rounded-b-lg bg-blue-600 px-3 py-2 text-white"}>
             Order #{index + 1}
           </button>
         </div>
@@ -34,7 +31,10 @@ const OrderCard = ({
         <div className="left-section flex items-center justify-center gap-2 ">
           {/* left side */}
           <div className=" flex items-start justify-center h-full w-full gap-4 flex-col md:flex-row">
-            <div className="grid grid-cols-2 gap-2 w-full  max-w-40 h-full relative p-3 bg-slate-200 rounded-3xl ">
+            <div
+              onClick={() => handleOpenPopup(order?.orderId)}
+              className="grid grid-cols-2 gap-2 w-full  max-w-40 h-full relative p-3 bg-slate-200 rounded-3xl cursor-pointer "
+            >
               {order?.products.slice(0, 4).map((product, index) => (
                 <img
                   key={index}
@@ -78,38 +78,12 @@ const OrderCard = ({
             </div>
           </div>
         </div>
-
-        {/* <div className="right-section">
-                    <h3 className="font-extrabold text2xl md:text-xl">{order?.orderId}</h3>
-                    <p>
-                        <span className="font-extrabold text2xl ">Order Date:</span>{" "}
-                        {order?.orderDate}
-                    </p>
-                    <p>
-                        <span className="font-semibold">Order Status:</span>{" "}
-                        {order?.orderStage}
-                    </p>
-                    <p>
-                        <span className="font-semibold">Rental Start Date: </span>{" "}
-                        {order?.rentalStartDate}
-                    </p>
-                    <p>
-                        <span className="font-semibold">Rental End Date: </span>{" "}
-                        {order?.rentalEndDate}
-                    </p>
-                </div> */}
       </div>
       {/* left side  end */}
 
       {/* <hr className="border-t-2 border-slate-100" /> */}
       {/* bottm  */}
       <div className="p-3 md:p-4 relative border-t-2 border-slate-100">
-        {/* <div className="flex justify-between md:flex-row flex-col">
-                    <div className="left-section gap-4"></div>
-                    <div className="mid-section"></div>
-                    <div className="right-section"></div>
-                </div> */}
-
         <div className="flex justify-start items-center gap-3">
           <div>
             <button

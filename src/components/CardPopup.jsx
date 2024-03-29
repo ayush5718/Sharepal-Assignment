@@ -1,14 +1,21 @@
 import React from "react";
 
 const CardPopup = ({ order, onClose }) => {
+  console.log(order);
+  const calculateTotalRent = () => {
+    let totalRent = 0;
+    order.products.forEach((product) => {
+      totalRent += product.rent * product.quantity;
+    });
+    return totalRent;
+  };
+
   return (
     <div>
       <section className=" sm:py-16 lg:py-20 ">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center">
-            <h1 className="text-2xl font-semibold text-gray-900">
-              Order Details
-            </h1>
+            <h1 className="text-4xl font-bold text-gray-900">Order Details</h1>
           </div>
           <div
             className="mx-auto mt-8 max-w-md md:mt-12 relative"
@@ -84,7 +91,7 @@ const CardPopup = ({ order, onClose }) => {
                   <div className="flex items-center justify-between">
                     <p className="text-gray-400">Total Amount</p>
                     <p className="text-lg font-semibold text-gray-900">
-                      ₹ {order.rent}
+                      ₹ {calculateTotalRent()}
                     </p>
                   </div>
                   <div className="flex items-center justify-between">

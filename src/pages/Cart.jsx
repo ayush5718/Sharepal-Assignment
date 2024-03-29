@@ -44,7 +44,13 @@ export const Cart = () => {
   const handleBackButton = () => {
     navigate("/");
   };
-
+  const calculateTotalRent = () => {
+    let totalRent = 0;
+    orderProducts.forEach((product) => {
+      totalRent += product.rent * product.quantity;
+    });
+    return totalRent;
+  };
   return (
     <div className="mx-auto max-w-7xl lg:px-0 bg-white md:p-7 p-2 py-8">
       <div className="mx-auto  py-4 ">
@@ -112,7 +118,7 @@ export const Cart = () => {
                         currentStepIndex={1}
                       />
                     </div>
-                    
+
                     {/* <span className="text-sm font-semibold">Order Date</span> */}
                     <span className="text-sm text-start md:text-base font-bold p-2 px-3 rounded-md bg-slate-200 ">
                       <span className=" font-bold text-slate-500  ">
@@ -125,7 +131,7 @@ export const Cart = () => {
                       <span className="text-slate-500 font-bold">
                         Total Amount:
                       </span>{" "}
-                      ₹{order.rent}
+                      ₹{calculateTotalRent()}
                     </span>
                     <span className="text-sm text-start md:text-base font-bold p-2 px-3 rounded-md bg-slate-200 ">
                       <span className=" font-bold text-slate-500">

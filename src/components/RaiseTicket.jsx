@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 
 const RaiseTicket = ({ orderId, onClose }) => {
+  console.log(orderId);
+  const calculateTotalRent = () => {
+    let totalRent = 0;
+    orderId.products.forEach((product) => {
+      totalRent += product.rent * product.quantity;
+    });
+    return totalRent;
+  };
+
   return (
     <div>
       <>
@@ -54,7 +63,7 @@ const RaiseTicket = ({ orderId, onClose }) => {
                     </label>
                     <input
                       type="text"
-                      value={orderId.orderId}
+                      value={orderId?.orderId}
                       name="name"
                       id="name"
                       className="bg-white border-1 border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 text-gray-800 dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -70,7 +79,7 @@ const RaiseTicket = ({ orderId, onClose }) => {
                       Price
                     </label>
                     <input
-                      value={orderId.rent}
+                      value={calculateTotalRent()}
                       name="price"
                       id="price"
                       className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
