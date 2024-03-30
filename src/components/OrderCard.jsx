@@ -40,7 +40,7 @@ const OrderCard = ({
                   key={index}
                   src={product.productImg}
                   alt={product.productName}
-                  className="w-full h-full object-cover bg-slate-100 rounded-2xl"
+                  className="w-full h-full max-h-20 object-cover bg-slate-100 rounded-2xl"
                 />
               ))}
               {order?.products.length > 4 && (
