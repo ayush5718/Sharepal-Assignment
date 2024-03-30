@@ -4,6 +4,38 @@ const buttonClassName =
 
 const buttonClassName2 =
   "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm w-full min-w-36 md:px-5 py-2.5 text-center ";
+export const getStatusColor = (status) => {
+  switch (status) {
+    case "order_received":
+      return "bg-green-50"; // Green for order received
+    case "kyc_received":
+      return "bg-yellow-50"; // Yellow for KYC received
+    case "order_confirmed":
+      return "bg-blue-50"; // Blue for order confirmed
+    case "order_packed":
+      return "bg-indigo-50"; // Indigo for order packed
+    case "order_delivered":
+      return "bg-purple-50"; // Purple for order delivered
+    case "pickup_due":
+      return "bg-pink-50"; // Pink for pickup due
+    case "pickup_scheduled":
+      return "bg-red-50"; // Red for pickup scheduled
+    case "quality_checked":
+      return "bg-orange-50"; // Orange for quality checked
+    case "payment_received":
+      return "bg-yellow-300"; // Light yellow for payment received
+    case "order_dispatched":
+      return "bg-green-300"; // Light green for order dispatched
+    case "out_for_delivery":
+      return "bg-blue-300"; // Light blue for out for delivery
+    case "order_returned":
+      return "bg-red-300"; // Light red for order returned
+    case "refund_processed":
+      return "bg-gray-300"; // Light gray for refund processed
+    default:
+      return "bg-gray-100"; // Default color
+  }
+};
 
 const OrderCard = ({
   order,
@@ -64,8 +96,15 @@ const OrderCard = ({
 
                 <div className="text-sm">
                   <dt className="inline">Order Status: </dt>
-                  <dd className="inline">{order?.orderStage}</dd>
+                  <dd
+                    className={`inline-flex items-center rounded-md ${getStatusColor(
+                      order?.orderStage
+                    )} px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10`}
+                  >
+                    {order?.orderStage}
+                  </dd>
                 </div>
+
                 <div className="text-sm">
                   <dt className="inline">Rental Start Date: </dt>
                   <dd className="inline">{order?.rentalStartDate}</dd>
